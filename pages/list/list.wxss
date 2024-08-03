@@ -1,10 +1,9 @@
 /* 容器 */
-.container {
+.page-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
-  padding: 10px;
+  height: 100vh;
 }
 
 /* 顶部栏 */
@@ -80,7 +79,7 @@
   flex-direction: row;
   overflow-x: scroll;
   white-space: nowrap;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .tag {
@@ -91,6 +90,55 @@
   border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
+}
+
+/* 固定标签栏 */
+.sticky-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+/* 帖子区 */
+.post-container {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.post {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.post-content {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #888888;
+}
+
+.post-actions button {
+  margin-left: 10px;
 }
 
 /* 底部导航栏 */
