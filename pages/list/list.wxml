@@ -26,16 +26,18 @@
 
 <!-- 发帖标签栏 -->
 <view class="sticky-bar">
-<scroll-view class="container3" scroll-x="true" scroll-with-animation="true">
-    <view class="tag">全部</view>
-    <view class="tag">日常投稿</view>
-    <view class="tag">树洞(匿名)</view>
-    <view class="tag">求助问答</view>
-    <view class="tag">二手好物</view>
-    <view class="tag">失物招领</view>
-    <view class="tag">寻物启事</view>
-</scroll-view>
-</view>
+    <scroll-view class="container3" scroll-x="true" scroll-with-animation="true">
+      <view class="tag" data-active="{{activeTag === '全部'}}" bindtap="setActiveTag">全部</view>
+      <view class="tag" data-active="{{activeTag === '日常投稿'}}" bindtap="setActiveTag">日常投稿</view>
+      <view class="tag" data-active="{{activeTag === '树洞(匿名)'}}" bindtap="setActiveTag">树洞(匿名)</view>
+      <view class="tag" data-active="{{activeTag === '求助问答'}}" bindtap="setActiveTag">求助问答</view>
+      <view class="tag" data-active="{{activeTag === '二手好物'}}" bindtap="setActiveTag">二手好物</view>
+      <view class="tag" data-active="{{activeTag === '失物招领'}}" bindtap="setActiveTag">失物招领</view>
+      <view class="tag" data-active="{{activeTag === '寻物启事'}}" bindtap="setActiveTag">寻物启事</view>
+      </scroll-view>
+      <view class="tag post-button" bindtap="post">发帖</view>
+    
+  </view>
 
 <!-- 帖子区 -->
 <view class="post-container">
