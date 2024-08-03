@@ -1,0 +1,54 @@
+<view class="container">
+  <!-- 星期轮换和搜索框 -->
+  <view class="top-bar">
+    <text class="day">{{day}}</text>
+    <view class="search-bar">
+      <image class="icon" src="/images/search_icon.png" bindtap="onSearch" />
+      <input class="search-input" type="text" placeholder="搜索帖子" bindinput="onInput" />
+    </view>
+  </view>
+</view>
+
+<!-- 轮播图片 -->
+<view class="container2">
+  <swiper class="swiper-container" indicator-dots autoplay interval="3000" circular>
+    <swiper-item>
+        <image class="item-image" src="/images/image1.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="item-image" src="/images/image2.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="item-image" src="/images/image3.png"></image>
+      </swiper-item>
+  </swiper>
+</view>
+
+<!-- 发帖标签栏 -->
+<scroll-view class="container3" scroll-x="true" scroll-with-animation="true">
+    <view class="tag">全部</view>
+    <view class="tag">日常投稿</view>
+    <view class="tag">树洞(匿名)</view>
+    <view class="tag">求助问答</view>
+    <view class="tag">二手好物</view>
+    <view class="tag">失物招领</view>
+    <view class="tag">寻物启事</view>
+</scroll-view>
+
+
+  <!-- 底部导航栏 -->
+  <view class="bottom-nav">
+    <view class="nav-item" bindtap="navigateToSchedule">
+      <image class="nav-icon" src="/images/schedule_icon.png"></image>
+      <text class="nav-text">课表</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToSchool">
+      <image class="nav-icon" src="/images/school_icon.png"></image>
+      <text class="nav-text">校园</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToProfile">
+      <image class="nav-icon" src="/images/profile_icon.png"></image>
+      <text class="nav-text">我的</text>
+    </view>
+  </view>
+
