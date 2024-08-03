@@ -2,6 +2,7 @@ Page({
   data: {
     day: '',
     query: '',
+    activeTag: '全部',
     posts: [
       {
         id: 1,
@@ -93,6 +94,17 @@ Page({
     });
     console.log('搜索内容:', query);
   },
+  setActiveTag: function(event) {
+    const tag = event.currentTarget.dataset.tag;
+    this.setData({
+      activeTag: tag
+    });
+  },
+  post: function() {
+    wx.navigateTo({
+      url: '/pages/post/post'
+    });
+  },
   likePost: function(event) {
     const postId = event.currentTarget.dataset.id;
     const posts = this.data.posts.map(post => {
@@ -116,7 +128,7 @@ Page({
   },
   navigateToSchool: function() {
     wx.navigateTo({
-      url: '/pages/list/list'
+      url: '/pages/school/school'
     });
   },
   navigateToProfile: function() {
