@@ -28,6 +28,7 @@
   align-items: center;
   flex-grow: 1;
   margin-left: 10px;
+  margin-right: 15px;
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 25px;
@@ -74,7 +75,7 @@
 
 /* 发帖标签栏 */
 .container3 {
-  width: 100%;
+  width: calc(100% - 80px); /* 留出发帖按钮的空间 */
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -91,6 +92,24 @@
   font-size: 16px;
   cursor: pointer;
 }
+.tag[data-active="true"] {
+  background-color: #e0e0e0;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.post-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 /* 固定标签栏 */
 .sticky-bar {
@@ -99,12 +118,15 @@
   top: 0;
   background-color: #ffffff;
   z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* 帖子区 */
 .post-container {
   width: 100%;
   margin: 10px 0;
+  padding-bottom: 70px; /* 增加底部内边距，避免导航栏遮挡 */
 }
 
 .post {
