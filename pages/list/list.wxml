@@ -1,4 +1,4 @@
-<view class="container">
+<scroll-view class="page-container" scroll-y="true" scroll-with-animation="true">
   <!-- 星期轮换和搜索框 -->
   <view class="top-bar">
     <text class="day">{{day}}</text>
@@ -7,7 +7,7 @@
       <input class="search-input" type="text" placeholder="搜索帖子" bindinput="onInput" />
     </view>
   </view>
-</view>
+
 
 <!-- 轮播图片 -->
 <view class="container2">
@@ -25,6 +25,7 @@
 </view>
 
 <!-- 发帖标签栏 -->
+<view class="sticky-bar">
 <scroll-view class="container3" scroll-x="true" scroll-with-animation="true">
     <view class="tag">全部</view>
     <view class="tag">日常投稿</view>
@@ -34,7 +35,25 @@
     <view class="tag">失物招领</view>
     <view class="tag">寻物启事</view>
 </scroll-view>
+</view>
 
+<!-- 帖子区 -->
+<view class="post-container">
+    <block wx:for="{{posts}}" wx:key="id">
+      <view class="post">
+        <text class="post-title">{{item.title}}</text>
+        <text class="post-content">{{item.content}}</text>
+        <view class="post-footer">
+          <text class="post-time">{{item.time}}</text>
+          <view class="post-actions">
+            <button bindtap="likePost" data-id="{{item.id}}">点赞 {{item.likes}}</button>
+            <button bindtap="commentPost" data-id="{{item.id}}">评论 {{item.comments}}</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
 
   <!-- 底部导航栏 -->
   <view class="bottom-nav">
