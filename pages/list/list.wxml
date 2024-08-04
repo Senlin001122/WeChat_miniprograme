@@ -57,19 +57,4 @@
   </view>
 </scroll-view>
 
-  <!-- 底部导航栏 -->
-  <view class="bottom-nav">
-    <view class="nav-item" bindtap="navigateToSchedule">
-      <image class="nav-icon" src="/images/schedule_icon.png"></image>
-      <text class="nav-text">课表</text>
-    </view>
-    <view class="nav-item" bindtap="navigateToSchool">
-      <image class="nav-icon" src="/images/school_icon.png"></image>
-      <text class="nav-text">校园</text>
-    </view>
-    <view class="nav-item" bindtap="navigateToProfile">
-      <image class="nav-icon" src="/images/profile_icon.png"></image>
-      <text class="nav-text">我的</text>
-    </view>
-  </view>
-
+  
