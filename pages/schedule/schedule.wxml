@@ -1,37 +1,36 @@
-  <!-- 顶部导航栏 -->
-  <view class="top-bar">
-    <view class="left-button" bindtap="importSchedule">导入课表</view>
-    <text class="week-title">第{{currentWeek}}周</text>
-    <view class="right-placeholder"></view>
+<!-- 顶部导航栏 -->
+<view class="top-bar">
+  <view class="left-button" bindtap="importSchedule">导入课表</view>
+  <text class="week-title">第{{currentWeek}}周</text>
+  <view class="right-placeholder"></view>
+</view>
+
+<!-- 星期导航栏 -->
+<view class="week-bar">
+  <view class="month-item">
+    <text>{{currentMonth}}</text>
+    <text>月</text>
   </view>
-
-  <!-- 星期导航栏 -->
-  <scroll-view class="week-bar" scroll-x="true" scroll-with-animation="true" style="white-space: nowrap;">
-    <view class="month-item">
-      <text>{{currentMonth}}</text>
-      <text>月</text>
+  <block wx:for="{{weekDays}}" wx:key="index">
+    <view class="week-item" bindtap="selectDay" data-day="{{item}}">
+      <view class="day-text">{{item.day}}</view>
+      <view class="date-text">{{item.date}}</view>
     </view>
-    <block wx:for="{{weekDays}}" wx:key="index">
-      <view class="week-item" bindtap="selectDay" data-day="{{item}}">
-        <view class="day-text">{{item.day}}</view>
-        <view class="date-text">{{item.date}}</view>
-      </view>
-    </block>
-  </scroll-view>
+  </block>
+</view>
 
-  <!-- 课表 -->
-  <scroll-view class="schedule-container" scroll-y="true">
-    <view class="time-slot" wx:for="{{timeSlots}}" wx:key="slot">
-      <view class="time">{{item.time}}</view>
-      <view class="classes">
-        <view class="class-item" wx:for="{{item.classes}}" wx:key="class">
-          <view class="class-info">
-            <view class="course-code">{{class.course_code}}</view>
-            <view class="class-time">{{class.class_time}}</view>
-            <view class="classroom">{{class.classroom}}</view>
-          </view>
+<!-- 课表 -->
+<scroll-view class="schedule-container" scroll-y="true">
+  <view class="time-slot" wx:for="{{timeSlots}}" wx:key="slot">
+    <view class="time">{{item.time}}</view>
+    <view class="classes">
+      <view class="class-item {{class.cssClass}}" wx:for="{{item.classes}}" wx:key="class">
+        <view class="class-info">
+          <view class="course-code">{{class.course_code}}</view>
+          <view class="class-time">{{class.class_time}}</view>
+          <view class="classroom">{{class.classroom}}</view>
         </view>
       </view>
     </view>
-  </scroll-view>
-
+  </view>
+</scroll-view>
