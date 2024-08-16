@@ -1,0 +1,74 @@
+  <!-- 顶部头像和信息 -->
+  <view class="profile-header">
+    <image class="avatar" src="/images/avatar.png"></image>
+    <view class="user-info">
+      <text class="username">神秘人物</text>
+      <view class="user-details">
+        <text class="user-id">社区 ID: 当前未认证</text>
+        <button class="update-avatar" bindtap="updateAvatar">编辑资料</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 用户互动统计 -->
+  <view class="user-stats">
+    <view class="stat-item">
+      <text class="stat-count">0</text>
+      <text class="stat-label">发布</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-count">0</text>
+      <text class="stat-label">点赞</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-count">0</text>
+      <text class="stat-label">评论</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-count">0</text>
+      <text class="stat-label">收藏</text>
+    </view>
+  </view>
+
+<view class="profile-page">
+  <!-- 功能列表 -->
+  <view class="profile-options">
+
+    <navigator url="/pages/verify/verify">
+      <view class="option-item">
+        <text>学生认证</text>
+        <text class="option-status">未认证</text>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/organization/organization">
+      <view class="option-item">
+        <text>组织入驻</text>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/rules/rules">
+      <view class="option-item">
+        <text>社区规范&小黑屋</text>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/index/index">
+      <view class="option-item" open-type="share">
+        <text>分享好友</text>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/feedback/feedback">
+      <view class="option-item">
+        <text>问题反馈</text>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/login/login">
+      <view class="option-item">
+        <text>前往登录</text>
+      </view>
+    </navigator>
+  </view>
+</view>
